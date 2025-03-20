@@ -19,7 +19,7 @@ function IstmeSektsioonid(props) {
     const valitudKohad = valitud;
 
     function kohaVarv(kohaTahis) {
-        const klassid = "istekoht";
+        const klassid = "istekoht" + props.algus;
         if (valitudKohad.includes(kohaTahis)) {
             return klassid + " valitud";
         }
@@ -70,6 +70,7 @@ function IstmeSektsioonid(props) {
     </div>
     );
 }
+
 IstmeSektsioonid.defaultProps = {
     hoivatudKohad: [],
     valitudKohad: [],
@@ -77,7 +78,6 @@ IstmeSektsioonid.defaultProps = {
     mitteSobivadKohad: [],
     kehvadKohad: []
 }
-
 IstmeSektsioonid.propTypes = {
     hoivatudKohad: PropTypes.array,
     valitudKohad: PropTypes.array,

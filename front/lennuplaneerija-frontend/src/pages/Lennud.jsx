@@ -12,17 +12,17 @@ function Lennud() {
     const [hinnalagi, setHind] = useState('');
 
     const lennud = [
-        { id: 1, alguskoht: "Tallinn", sihtkoht: "Tartu", kuupaev: new Date(2025, 3, 22), hind: "100€" },
-        { id: 2, alguskoht: "Tartu", sihtkoht: "Helsingi", kuupaev: new Date(2025, 3, 22), hind: "80€" },
-        { id: 3, alguskoht: "Tallinn", sihtkoht: "Pärnu", kuupaev: new Date(2025, 3, 22), hind: "120€" },
-        { id: 4, alguskoht: "Pärnu", sihtkoht: "Tallinn", kuupaev: new Date(2025, 3, 22), hind: "120€" },
+        { id: 1, alguskoht: "Tallinn", sihtkoht: "Tartu", kuupaev: new Date(2025, 3, 22), hind: 100.01 },
+        { id: 2, alguskoht: "Tartu", sihtkoht: "Helsingi", kuupaev: new Date(2025, 3, 22), hind: 80 },
+        { id: 3, alguskoht: "Tallinn", sihtkoht: "Pärnu", kuupaev: new Date(2025, 3, 22), hind: 120 },
+        { id: 4, alguskoht: "Pärnu", sihtkoht: "Tallinn", kuupaev: new Date(2025, 3, 22), hind: 120 },
     ]
 
     const filtreeritudLennud = lennud.filter(lend => {
         return (lahtekoht === '' ? true : lend.alguskoht.toLowerCase().includes(lahtekoht.toLowerCase())) &&
             (sihtkoht === '' ? true : lend.sihtkoht.toLowerCase().includes(sihtkoht.toLowerCase())) &&
             (kuupaev === '' ? true : lend.kuupaev.toDateString() === new Date(kuupaev).toDateString()) &&
-            (hinnalagi === '' ? true : parseInt(lend.hind) <= parseInt(hinnalagi))
+            (hinnalagi === '' ? true : lend.hind <= parseInt(hinnalagi))
     })
 
     return (

@@ -23,7 +23,7 @@
     font-size: 2em;
 }
 
-.filt-paar {
+.vorm-paar {
     display: flex;
     flex-direction: column;
     width: 22%;
@@ -31,12 +31,12 @@
     gap: 0.5em;
 }
 
-.filt-paar label {
+.vorm-paar label {
     font-size: 1.2em;
     font-weight: 500;
 }
 
-.filt-paar input {
+.vorm-paar input {
     width: 100%;
 }
 
@@ -100,13 +100,15 @@
 
 .broneerimine {
     flex-direction: row;
-    align-items: center;
+    justify-content: center;
+    align-items: start;
+    gap: 4em;
 }
 
 .lennuki-siluett {
     display: flex;
     flex-direction: column;
-    transform: translateY(-300px);
+    transform: translateY(-35%);
     width: 340px;
     height: 1000px;
 }
@@ -192,4 +194,36 @@
 .hoivatud:hover {
     cursor: not-allowed;
     background-color: #242424;
+}
+
+.eelistused-konteiner {
+    width: 40%;
+    padding: 2em;
+    background-color: #181818;
+    border-radius: 10px;
+    margin-top: 20vh;
+}
+
+.eelistused {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.eelistused input:hover {
+    cursor: pointer;
+}
+
+.algus, .algus:hover {
+    background-color: #242424;
+    color: #242424;
+    cursor: initial;
+}
+
+.algus span {
+    display: none;
+}
+
+.eelistused button {
+    padding: 1em;
 }

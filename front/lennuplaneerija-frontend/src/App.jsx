@@ -14,7 +14,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Lennud />} />
           <Route path="/lennud" element={<Lennud />} />
-          <Route path="/lennud/:id" element={<Lend />} />
+          <Route path="/lennud/:id/:hind" element={<Lend />} />
           <Route path="/broneeringud" element={<Broneeringud />} />
         </Routes>
       </BrowserRouter>

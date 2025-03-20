@@ -4,7 +4,7 @@ function Lend(props) {
     const liigu = useNavigate();
 
     const liiguBroneerimisLehele = () => {
-        liigu(`/lennud/${props.id}`);
+        liigu(`/lennud/${props.id}/${props.hind}`);
     };
 
     return (
@@ -18,7 +18,7 @@ function Lend(props) {
         </div>
 
         <div className="lend">
-            <span>{props.hind}</span>
+            <span>{props.hind} €</span>
             <button className="broneeri-nupp" onClick={liiguBroneerimisLehele}>Broneeri</button>
         </div>
     </div>
