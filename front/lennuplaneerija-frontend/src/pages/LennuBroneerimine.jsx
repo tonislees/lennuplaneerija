@@ -1,4 +1,5 @@
 import Pais from "../components/Pais";
+import IstmeSektsioonid from "../components/IstmeSektsioonid";
 
 function LennuBroneerimine() {
     return (
@@ -7,14 +8,10 @@ function LennuBroneerimine() {
         <div className="sisu broneerimine">
             <div className="lennuki-siluett">
                 <div className="nina"></div>
-                <div className="istmed-konteiner">
-                    <div className="istme-sektsioon"></div>
-                    <div className="istme-sektsioon"></div>  
-                    <div className="istme-sektsioon"></div>  
-                    <div className="istme-sektsioon"></div>                      
-                </div>
+                <IstmeSektsioonid hoivatudKohad={["2B"]} mitteSobivadKohad={["15C", "16C"]}/>
                 <div className="saba"></div>
             </div>
+        
         </div>
     </div>
     );
