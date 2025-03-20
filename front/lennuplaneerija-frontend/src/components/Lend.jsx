@@ -1,4 +1,12 @@
+import { useNavigate } from 'react-router-dom';
+
 function Lend(props) {
+    const liigu = useNavigate();
+
+    const liiguBroneerimisLehele = () => {
+        liigu(`/lennud/${props.id}`);
+    };
+
     return (
     <div className="lend-konteiner">
         <div className="lend">
@@ -11,7 +19,7 @@ function Lend(props) {
 
         <div className="lend">
             <span>{props.hind}</span>
-            <button className="broneeri-nupp">Broneeri</button>
+            <button className="broneeri-nupp" onClick={liiguBroneerimisLehele}>Broneeri</button>
         </div>
     </div>
     );

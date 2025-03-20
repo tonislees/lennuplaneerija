@@ -48,6 +48,7 @@ function Lennud() {
                         sihtkoht={lend.sihtkoht} 
                         kuupaev={lend.kuupaev} 
                         hind={lend.hind} 
+                        id={lend.id}
                     />
                 ))}
             </div>
