@@ -11,10 +11,9 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Lennud />}>
-            <Route path="/lennud" element={<Lennud />} />
-            <Route path="/broneeringud" element={<Broneeringud />} />
-          </Route>
+          <Route path='/' element={<Lennud />} />
+          <Route path="/lennud" element={<Lennud />} />
+          <Route path="/broneeringud" element={<Broneeringud />} />
         </Routes>
       </BrowserRouter>
     </>

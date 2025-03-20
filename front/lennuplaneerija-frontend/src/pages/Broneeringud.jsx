@@ -1,9 +1,13 @@
-import Pais from "../assets/Pais";
+import Pais from "../components/Pais";
 
 function Broneeringud() {
-    return <div>
+    return (
+    <div className="pohi">
         <Pais />
-    </div>;
+        <div className="sisu">
+        </div>
+    </div>
+    );
 }
 
 export default Broneeringud;
