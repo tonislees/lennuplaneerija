@@ -5,7 +5,6 @@ import { useState } from "react";
 function IstmeSektsioonid(props) {
 
     const sektsioonid = Array(4).fill(null);
-    const tahised = {0: "A", 1: "B", 2: "C", 3: "D", 4: "E", 5: "F"};
     const sektsioonRida = Array(3).fill(null);
     const sektsioonRead = Array(10).fill(null);
 
@@ -13,6 +12,7 @@ function IstmeSektsioonid(props) {
     const sobivadKohad = props.sobivadKohad || [];
     const mitteSobivadKohad = props.mitteSobivadKohad || [];
     const kehvadKohad = props.kehvadKohad || [];
+    console.log(kehvadKohad)
 
     const [valitud, setValitud] = useState([]);
 
@@ -40,7 +40,7 @@ function IstmeSektsioonid(props) {
 
     const kohaTahis = (i, j, k) => {
         return (i < 2 ? j + 1 : (j + 11 > 12 ? j + 12 : j + 11)) + 
-               (i % 2 === 0 ? tahised[k] : tahised[k + 3])
+               (i % 2 === 0 ? props.tahised[k] : props.tahised[k + 3])
     }
 
     function valitudLuliti(e, kohaTahis) {
