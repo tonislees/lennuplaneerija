@@ -4,30 +4,18 @@ import { useState } from "react";
 
 function IstmeSektsioonid(props) {
 
-    const sektsioonid = Array(4).fill(null);
-    const sektsioonRida = Array(3).fill(null);
-    const sektsioonRead = Array(10).fill(null);
-
     const hoivatudKohad = props.hoivatudKohad || [];
-    const sobivadKohad = props.sobivadKohad || [];
     const mitteSobivadKohad = props.mitteSobivadKohad || [];
     const kehvadKohad = props.kehvadKohad || [];
-    console.log(kehvadKohad)
-
-    const [valitud, setValitud] = useState([]);
-
-    const valitudKohad = valitud;
+    const valitudKohad = props.valitudKohad || [];
 
     function kohaVarv(kohaTahis) {
         const klassid = "istekoht" + props.algus;
-        if (valitudKohad.includes(kohaTahis)) {
-            return klassid + " valitud";
-        }
-        if (sobivadKohad.includes(kohaTahis)) {
-            return klassid + " sobiv";
-        }
         if (hoivatudKohad.includes(kohaTahis)) {
             return klassid + " hoivatud";
+        }
+        if (valitudKohad.includes(kohaTahis)) {
+            return klassid + " valitud";
         }
         if (mitteSobivadKohad.includes(kohaTahis)) {
             return klassid + " mitte-sobiv";
@@ -44,12 +32,18 @@ function IstmeSektsioonid(props) {
     }
 
     function valitudLuliti(e, kohaTahis) {
-        if (e.currentTarget.classList.contains("valitud")) {
-            setValitud(valitud.filter(koht => koht !== kohaTahis));
-        } else if (!e.currentTarget.classList.contains("hoivatud")) {
-            setValitud([...valitud, kohaTahis]);
+        if (props.algus === "") {
+            if (e.currentTarget.classList.contains("valitud")) {
+                props.setValitudKohad(props.valitudKohad.filter(koht => koht !== kohaTahis))
+            } else if (!e.currentTarget.classList.contains("hoivatud")) {
+                props.setValitudKohad([...props.valitudKohad, kohaTahis]);
+            }
         }
     }
+
+    const sektsioonid = Array(4).fill(null);
+    const sektsioonRida = Array(3).fill(null);
+    const sektsioonRead = Array(10).fill(null);
 
     return (
     <div className="istmed-konteiner">

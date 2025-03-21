@@ -9,9 +9,9 @@ function LennuBroneerimine() {
 
     const hoivatudKohad = [
         { id: 1, kohad: ["2B", "3C", "4C"] },
-        { id: 2, kohad: ["15C", "16C"] },
+        { id: 2, kohad: ["15C", "16C", "1A"] },
         { id: 3, kohad: ["2B", "3C"] },
-        { id: 4, kohad: ["15C", "16C"] }
+        { id: 4, kohad: ["15C", "16C", "1A", "1F"] }
     ];
 
     const hoivatud = hoivatudKohad[parseInt(id)].kohad;
@@ -25,9 +25,16 @@ function LennuBroneerimine() {
         korvutiIstmed: false
     });
     const [reisijateArv, setReisijateArv] = useState(0);
+    const [valitudKohad , setValitudKohad] = useState([]);
+
+    useEffect(() => {
+        if (algus === "") {
+            setReisijateArv(valitudKohad.length)
+        }
+    }, [valitudKohad])
 
     const tahised = {0: "A", 1: "B", 2: "C", 3: "D", 4: "E", 5: "F"};
-
+    
     const koikIstmed = () => {
         const istmed = [];
         for (let i = 0; i < 20; i++) {
@@ -68,8 +75,7 @@ function LennuBroneerimine() {
                                                  ...valikud.jalaruum.kehv])).filter(koht => !mitteSobivadIstmed.includes(koht))
         setKehvad(kehvadIstmed)
         setMitteSobivad(mitteSobivadIstmed)
-    }, [eelistused, jalaruumIstmed, aknaAllIstmed, valjapaasuLahedalIstmed, algus])
-    console.log(kehvad, mitteSobivad)
+    }, [eelistused, algus])
     return (
     <div className="pohi">
         <Pais />
@@ -81,18 +87,30 @@ function LennuBroneerimine() {
                     mitteSobivadKohad={mitteSobivad}
                     kehvadKohad={kehvad}
                     algus={algus}
-                    tahised={tahised}/>
+                    tahised={tahised}
+                    valitudKohad={valitudKohad}
+                    setValitudKohad={setValitudKohad}
+                    setReisijateArv={setReisijateArv}
+                />
                 <div className="saba"></div>
             </div>
             <Eelistused 
                 hind={hind}
                 setKehvad={setKehvad}
                 setMitteSobivad={setMitteSobivad}
+                algus={algus}
                 setAlgus={setAlgus}
                 eelistused={eelistused}
                 setEelistused={setEelistused}
                 reisijateArv={reisijateArv}
-                setReisijateArv={setReisijateArv}/>
+                setReisijateArv={setReisijateArv}
+                koikIstmed={koikIstmed}
+                setValitudKohad={setValitudKohad}
+                hoivatudKohad={hoivatud}
+                mitteSobivadKohad={mitteSobivad}
+                kehvadKohad={kehvad}
+                valitudKohad={valitudKohad}
+            />
         </div>
     </div>
     );
