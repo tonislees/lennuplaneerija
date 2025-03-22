@@ -53,11 +53,9 @@ function Eelistused(props) {
                     if (!props.hoivatudKohad.includes(koht)) {
                         if (sobivLeitud) {
                             vabadKohad.push(koht)
-                            console.log(koht)
-                        } else if (!sobimatudKohad.has(koht)) {
+                        } else if (!sobimatudKohad.has(koht) && !(koht.length === 2 ? koht[1] === "F" : koht[2] === "F")) {
                             sobivLeitud = true
                             vabadKohad.push(koht)
-                            console.log(koht)
                         }
                         if (vabadKohad.length >= uusReisijateArv) {
                             props.setValitudKohad(vabadKohad)
@@ -71,7 +69,7 @@ function Eelistused(props) {
 
     return (
     <div className="eelistused-konteiner">
-        <h2>Eelistused:</h2>
+        <h2>Eelistused</h2>
         <div className="eelistused">
             <label>
                 <input 
@@ -101,10 +99,10 @@ function Eelistused(props) {
                         type="checkbox" />Kõrvuti istekohad
                 </label> : null
             }
+            <label htmlFor="reisijate-arv-input">Reisijate arv</label>
             <input 
                 id="reisijate-arv-input"
                 type="number" 
-                placeholder="Reisijate arv..." 
                 onChange={(e) => muudaPlaani(e.target)} 
             />
             <button onClick={(e) => alustaPlaan(e)}>Kinnita eelistused</button>

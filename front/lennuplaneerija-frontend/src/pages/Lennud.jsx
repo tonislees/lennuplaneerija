@@ -1,7 +1,7 @@
 import Pais from "../components/Pais";
 import LennudFiltrid from "../components/LennudFiltrid";
 import Lend from "../components/Lend";
-import logo from '../assets/LHlogo.png';
+import logo from "../assets/LHlogo.png";
 import { useState } from "react";
 
 function Lennud() {

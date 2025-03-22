@@ -12,7 +12,7 @@ function Lend(props) {
         <div className="lend">
             <img src={props.logo} alt="lennufirma logo" className='logo-pilt'/>
             <span>{props.alguskoht}</span>
-            <span><i className="nool"></i></span>
+            <span><i className="nool paremale"></i></span>
             <span>{props.sihtkoht}</span>
             <span className='kuupaev'>{props.kuupaev.toLocaleDateString()}</span>
         </div>

@@ -1,0 +1,85 @@
+.broneering-konteiner {
+    width: 100%;
+    height: 250px;
+    min-height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2em;
+    background-color: #181818;
+    border-radius: 10px;
+}
+
+.pilt-asukohad {
+    display: flex;
+    height: 100%;
+    gap: 2em;
+}
+
+.sihtkoht-pilt {
+    max-height: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.algus-nool {
+    display: flex;
+    flex-direction: column;
+    max-width: fit-content;
+    align-items: center;
+}
+
+.asukohad {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    height: 100%;
+}
+
+.asukohad span i {
+    border-color: rgb(147, 147, 147);
+}
+
+.asukohad h2 {
+    color: rgb(147, 147, 147);
+    margin: 0;
+}
+
+.asukohad h1 {
+    font-size: xx-large;
+    margin: 0;
+}
+
+.lennuinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    height: 60%;
+    height: 100%;
+    gap: 1em;
+}
+
+.kohad {
+    display: flex;
+    width: 100%;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.kp {
+    font-size: xx-large;
+    font-weight: bold;
+    margin-top: auto;
+}
+
+.kestus {
+    margin-top: auto;
+    margin-right: auto;
+    transform: translateY(-4px);
+}
+
+.lennuinfo span {
+    font-size: x-large;
+}
