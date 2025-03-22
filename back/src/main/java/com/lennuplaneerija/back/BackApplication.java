@@ -1,13 +1,13 @@
-package com.lennuplaneerija.lennuplaneerija_backend;
+package com.lennuplaneerija.back;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LennuplaneerijaBackendApplication {
+public class BackApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(LennuplaneerijaBackendApplication.class, args);
+		SpringApplication.run(BackApplication.class, args);
 	}
 
 }
