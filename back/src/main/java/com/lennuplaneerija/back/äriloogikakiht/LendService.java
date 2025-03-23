@@ -1,7 +1,6 @@
 package com.lennuplaneerija.back.äriloogikakiht;
 
 import com.lennuplaneerija.back.DTO.LendDTO;
-import com.lennuplaneerija.back.andmepääsukiht.Lend;
 import com.lennuplaneerija.back.andmepääsukiht.LendRepo;
 import org.springframework.stereotype.Service;
 

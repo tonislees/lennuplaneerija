@@ -12,6 +12,7 @@ import org.springframework.core.io.ClassPathResource;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.time.LocalDate;
+import java.time.Month;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,7 +47,7 @@ public class LendConfig {
 
             Lend lissabonTallinn = new Lend(
                     "Lissabon",
-                    LocalDate.of(2025, MARCH, 24),
+                    LocalDate.of(2025, Month.MAY, 23),
                     "Tallinn",
                     200,
                     LHlogo,
@@ -55,7 +56,84 @@ public class LendConfig {
                     new ArrayList<>()
             );
 
-            lendRepo.saveAll(List.of(tallinnLissabon, lissabonTallinn));
+            Lend TartuElva = new Lend(
+                    "Tartu",
+                    LocalDate.of(2025, Month.APRIL, 4),
+                    "Elva",
+                    25,
+                    LHlogo,
+                    LHlogo,
+                    new ArrayList<>(),
+                    new ArrayList<>()
+            );
+
+            Lend AntslaVilsandi = new Lend(
+                    "Antsla",
+                    LocalDate.of(2025, Month.MAY, 30),
+                    "Vilsandi",
+                    31,
+                    LHlogo,
+                    LHlogo,
+                    new ArrayList<>(),
+                    new ArrayList<>()
+            );
+
+            Lend OtepaaNarva = new Lend(
+                    "Otepaa",
+                    LocalDate.of(2025, Month.MAY, 3),
+                    "Narva",
+                    42,
+                    LHlogo,
+                    LHlogo,
+                    new ArrayList<>(),
+                    new ArrayList<>()
+            );
+
+            Lend kuressaareKardla = new Lend(
+                    "Kuressaare",
+                    LocalDate.of(2025, Month.JUNE, 8),
+                    "Kärdla",
+                    17,
+                    LHlogo,
+                    LHlogo,
+                    new ArrayList<>(),
+                    new ArrayList<>()
+            );
+
+            Lend kilinginommeRapina = new Lend(
+                    "Kilingi-Nõmme",
+                    LocalDate.of(2025, Month.JUNE, 9),
+                    "Räpina",
+                    38,
+                    LHlogo,
+                    LHlogo,
+                    new ArrayList<>(),
+                    new ArrayList<>()
+            );
+
+            Lend kardlaAntsla = new Lend(
+                    "Kärdla",
+                    LocalDate.of(2025, Month.MAY, 23),
+                    "Antsla",
+                    56,
+                    LHlogo,
+                    LHlogo,
+                    new ArrayList<>(),
+                    new ArrayList<>()
+            );
+
+            Lend sangasteAmari = new Lend(
+                    "Sangaste",
+                    LocalDate.of(2025, Month.AUGUST, 19),
+                    "Ämari",
+                    91,
+                    LHlogo,
+                    LHlogo,
+                    new ArrayList<>(),
+                    new ArrayList<>()
+            );
+
+            lendRepo.saveAll(List.of(tallinnLissabon, lissabonTallinn, TartuElva, AntslaVilsandi, OtepaaNarva, kuressaareKardla, kilinginommeRapina, kardlaAntsla, sangasteAmari));
         };
     }
 

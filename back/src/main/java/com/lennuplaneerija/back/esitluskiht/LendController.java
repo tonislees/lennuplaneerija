@@ -1,7 +1,6 @@
 package com.lennuplaneerija.back.esitluskiht;
 
 import com.lennuplaneerija.back.DTO.LendDTO;
-import com.lennuplaneerija.back.andmepääsukiht.Lend;
 import com.lennuplaneerija.back.äriloogikakiht.LendService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;

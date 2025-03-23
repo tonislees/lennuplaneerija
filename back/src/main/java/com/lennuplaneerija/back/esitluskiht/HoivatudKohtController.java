@@ -1,10 +1,8 @@
 package com.lennuplaneerija.back.esitluskiht;
 
 import com.lennuplaneerija.back.DTO.HoivatudKohtDTO;
-import com.lennuplaneerija.back.andmepääsukiht.HoivatudKoht;
 import com.lennuplaneerija.back.äriloogikakiht.HoivatudKohtService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

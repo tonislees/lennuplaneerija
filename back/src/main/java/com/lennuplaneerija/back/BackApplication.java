@@ -12,13 +12,4 @@ public class BackApplication {
 		SpringApplication.run(BackApplication.class, args);
 	}
 
-//	@Bean
-//	CommandLineRunner commandLineRunner(LendAndmehoidla repository, LendAndmehoidla lendAndmehoidla) {
-//		return args -> {
-//			Lend tallinnHelsingi = new Lend("Helsingi", 120, "Tallinn");
-//			lendAndmehoidla.save(tallinnHelsingi);
-//		};
-//	}
-
-
 }

@@ -1,7 +1,6 @@
 package com.lennuplaneerija.back.äriloogikakiht;
 
 import com.lennuplaneerija.back.DTO.HoivatudKohtDTO;
-import com.lennuplaneerija.back.andmepääsukiht.HoivatudKoht;
 import com.lennuplaneerija.back.andmepääsukiht.HoivatudKohtRepo;
 import org.springframework.stereotype.Service;
 
