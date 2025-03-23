@@ -7,7 +7,6 @@ import React, { useState, useEffect, useMemo } from 'react';
 
 function LennuBroneerimine() {
     const { id, hind } = useParams();
-    console.log(id)
 
     const [hoivatudKohad, setHoivatudKohad] = useState([])
     
@@ -28,7 +27,6 @@ function LennuBroneerimine() {
         laeKohad()
     }, [])
 
-    console.log(hoivatudKohad)
 
     const [mitteSobivad, setMitteSobivad] = useState([]);
     const [kehvad, setKehvad] = useState([]);

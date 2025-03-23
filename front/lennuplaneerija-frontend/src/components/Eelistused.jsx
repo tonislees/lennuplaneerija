@@ -118,7 +118,6 @@ function Eelistused(props) {
             <button onClick={(e) => alustaPlaan(e)}>Kinnita eelistused</button>
             <h3>Hind: {props.reisijateArv * props.hind} €</h3>
             <button onClick={() => {
-                console.log(props.lennuId)
                 postBroneering(props.lennuId)
                 liiguBroneerimisLehele()
             }}>Broneeri</button>
