@@ -1,5 +1,6 @@
 package com.lennuplaneerija.back.äriloogikakiht;
 
+import com.lennuplaneerija.back.DTO.LendDTO;
 import com.lennuplaneerija.back.andmepääsukiht.Lend;
 import com.lennuplaneerija.back.andmepääsukiht.LendRepo;
 import org.springframework.stereotype.Service;
@@ -15,8 +16,8 @@ public class LendService {
         this.lendRepo = lendRepo;
     }
 
-    public List<Lend> getLend() {
-        return lendRepo.findAll();
+    public List<LendDTO> getLend() {
+        return lendRepo.findAllLendDTO();
     }
 
 }

@@ -40,7 +40,8 @@ public class HoivatudKoht {
     private Lend lend;
 
     @ManyToOne
-    @JoinColumn(name = "broneering_id")
+    @JoinColumn(name = "broneering_id"
+    )
     private Broneering broneering;
 
     public HoivatudKoht(String kohaTahis, Lend lend, Broneering broneering) {

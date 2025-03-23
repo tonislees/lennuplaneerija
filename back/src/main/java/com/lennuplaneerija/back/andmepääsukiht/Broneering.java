@@ -28,15 +28,16 @@ public class Broneering {
     )
     private long id;
 
-    @ManyToMany(mappedBy = "broneeringud")
-    private List<Lend> lennud;
+    @ManyToOne
+    @JoinColumn(name = "lend_id")
+    private Lend lend;
 
     @OneToMany(mappedBy = "broneering")
     private List<HoivatudKoht> hoivatudKohad;
 
-    public Broneering(List<HoivatudKoht> hoivatudKohad, List<Lend> lennud) {
+    public Broneering(List<HoivatudKoht> hoivatudKohad, Lend lend) {
         this.hoivatudKohad = hoivatudKohad;
-        this.lennud = lennud;
+        this.lend = lend;
     }
 
     public Broneering() {

@@ -73,12 +73,7 @@ public class Lend {
     )
     private byte[] sihtkohaPilt;
 
-    @ManyToMany
-    @JoinTable(
-            name = "lennu_broneering",
-            joinColumns = @JoinColumn(name = "lend_id"),
-            inverseJoinColumns = @JoinColumn(name = "broneering_id")
-    )
+    @OneToMany(mappedBy = "lend")
     private List<Broneering> broneeringud;
 
     @OneToMany(mappedBy = "lend")

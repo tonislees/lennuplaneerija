@@ -1,7 +1,17 @@
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { func, PropTypes } from 'prop-types';
+import { postBroneering } from "../services/api";
+
 
 function Eelistused(props) {    
+
+
+    const liigu = useNavigate();
+
+    const liiguBroneerimisLehele = () => {
+        liigu(`/broneeringud`);
+    };
 
     function alustaPlaan(e) {
         e.currentTarget.style.display = "none";
@@ -107,7 +117,11 @@ function Eelistused(props) {
             />
             <button onClick={(e) => alustaPlaan(e)}>Kinnita eelistused</button>
             <h3>Hind: {props.reisijateArv * props.hind} €</h3>
-            <button>Broneeri</button>
+            <button onClick={() => {
+                console.log(props.lennuId)
+                postBroneering(props.lennuId)
+                liiguBroneerimisLehele()
+            }}>Broneeri</button>
         </div>
     </div>
     );

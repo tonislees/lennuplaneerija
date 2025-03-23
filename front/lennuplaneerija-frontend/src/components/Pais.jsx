@@ -1,3 +1,5 @@
+import React from 'react'
+
 function Pais() {
     return (
     <header className="pais">

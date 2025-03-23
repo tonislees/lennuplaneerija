@@ -2,19 +2,34 @@ import Pais from "../components/Pais";
 import IstmeSektsioonid from "../components/IstmeSektsioonid";
 import Eelistused from "../components/Eelistused";
 import { useParams } from "react-router-dom";
+import { getHoivatudKohad } from "../services/api";
 import React, { useState, useEffect, useMemo } from 'react';
 
 function LennuBroneerimine() {
     const { id, hind } = useParams();
+    console.log(id)
 
-    const hoivatudKohad = [
-        { id: 1, kohad: ["2B", "3C", "4C"] },
-        { id: 2, kohad: ["15C", "16C", "1A"] },
-        { id: 3, kohad: ["2B", "3C"] },
-        { id: 4, kohad: ["15C", "16C", "1A", "1F"] }
-    ];
+    const [hoivatudKohad, setHoivatudKohad] = useState([])
+    
+    useEffect(() => {
+        const laeKohad = async () => {
+            try {
+                const apiKohad = await getHoivatudKohad(id)
+                const kohad = []
+                for (let koht in apiKohad) {
+                    kohad.push(apiKohad[koht].kohaTahis)
+                }
+                setHoivatudKohad(kohad)
+            } catch (err) {
+                console.log(err)
+            }
+        }
 
-    const hoivatud = hoivatudKohad[parseInt(id)].kohad;
+        laeKohad()
+    }, [])
+
+    console.log(hoivatudKohad)
+
     const [mitteSobivad, setMitteSobivad] = useState([]);
     const [kehvad, setKehvad] = useState([]);
     const [algus, setAlgus] = useState(" algus");
@@ -83,7 +98,7 @@ function LennuBroneerimine() {
             <div className="lennuki-siluett">
                 <div className="nina"></div>
                 <IstmeSektsioonid 
-                    hoivatudKohad={hoivatud}
+                    hoivatudKohad={hoivatudKohad}
                     mitteSobivadKohad={mitteSobivad}
                     kehvadKohad={kehvad}
                     algus={algus}
@@ -106,10 +121,11 @@ function LennuBroneerimine() {
                 setReisijateArv={setReisijateArv}
                 koikIstmed={koikIstmed}
                 setValitudKohad={setValitudKohad}
-                hoivatudKohad={hoivatud}
+                hoivatudKohad={hoivatudKohad}
                 mitteSobivadKohad={mitteSobivad}
                 kehvadKohad={kehvad}
                 valitudKohad={valitudKohad}
+                lennuId={parseInt(id)}
             />
         </div>
     </div>

@@ -3,6 +3,17 @@ import Broneering from "../components/Broneering";
 import helsingiPilt from "../assets/Helsingi.jpg";
 
 function Broneeringud() {
+
+    const andmed = [
+        {
+            "alguskoht": "Tallinn",
+            "sihtkoht": "Helsingi",
+            "sihtkohaPilt": "byteJada",
+            "kuupaev": "kp",
+            "broneeritudKohad": []
+        }
+    ]
+
     const kohad = ["2A", "1B", "2A", "1B", "2A", "1B", "2A", "1B", "2A", "1B", "2A", "1B", "2A", "1B"]
     return (
     <div className="pohi">

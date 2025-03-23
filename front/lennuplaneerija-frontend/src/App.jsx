@@ -1,3 +1,4 @@
+import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Lennud from './pages/Lennud' 
 import Lend from './pages/LennuBroneerimine'

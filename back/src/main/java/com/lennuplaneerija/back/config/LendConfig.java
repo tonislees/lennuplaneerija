@@ -1,18 +1,16 @@
 package com.lennuplaneerija.back.config;
 
-import com.lennuplaneerija.back.andmepääsukiht.Broneering;
-import com.lennuplaneerija.back.andmepääsukiht.HoivatudKoht;
 import com.lennuplaneerija.back.andmepääsukiht.Lend;
 import com.lennuplaneerija.back.andmepääsukiht.LendRepo;
+import jakarta.transaction.Transactional;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 import org.springframework.core.io.ClassPathResource;
 
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +26,9 @@ public class LendConfig {
     }
 
     @Bean
-    CommandLineRunner commandLineRunner(LendRepo lendRepo) {
+    @Order(1)
+    @Transactional
+    CommandLineRunner commandLineRunnerLend(LendRepo lendRepo) {
         return args -> {
 
             byte[] LHlogo = loeAndmedFailist("LHLogo.png");
@@ -48,7 +48,7 @@ public class LendConfig {
                     "Lissabon",
                     LocalDate.of(2025, MARCH, 24),
                     "Tallinn",
-                    250,
+                    200,
                     LHlogo,
                     LHlogo,
                     new ArrayList<>(),
