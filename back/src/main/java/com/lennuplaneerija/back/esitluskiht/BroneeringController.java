@@ -1,4 +1,4 @@
 package com.lennuplaneerija.back.esitluskiht;
 
-public class LendKontroller {
+public class BroneeringController {
 }

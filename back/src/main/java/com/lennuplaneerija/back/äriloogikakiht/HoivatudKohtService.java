@@ -1,4 +1,4 @@
 package com.lennuplaneerija.back.äriloogikakiht;
 
-public class BroneeringTeenus {
+public class HoivatudKohtService {
 }
