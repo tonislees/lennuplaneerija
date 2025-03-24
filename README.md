@@ -23,7 +23,7 @@ Käivitamiseks:
    Liigu kausta front -> lennuplaneerija-frontend ning kirjuta seal vajalike sõltuvuste alla laadimiseks käsureale<br>
    `npm install`<br>
    Seejärel käivita front-end käsuga <br>
-   `npm start`
+   `npm run dev`
 
 Nüüd liigu veebibrauseris lehele `8081`
 
